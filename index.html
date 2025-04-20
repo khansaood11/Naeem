@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Engagement Announcement - Mansuri Family</title>
+  <title>Engagement Info - Mansuri Family</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
@@ -112,12 +112,12 @@
   <!-- Slide 0: Cover -->
   <div class="slide active" id="slide0">
     <div class="container">
-      <h2 style="font-family: 'Great Vibes', cursive; font-size: 38px;">A Joyous Announcement</h2>
-      <h1 style="font-size: 42px; color: #a0522d; margin-top: 20px;">Naeem</h1>
+      <h2 style="font-family: 'Great Vibes', cursive; font-size: 38px;">Engagement Announcement</h2>
+      <h1 style="font-size: 42px; color: #a0522d; margin-top: 20px;">Naeem Mansuri</h1>
       <h1 style="font-size: 42px; color: #a0522d;">&</h1>
-      <h1 style="font-size: 42px; color: #a0522d;">Saniya</h1>
+      <h1 style="font-size: 42px; color: #a0522d;">Saniya Mansur</h1>
       <p style="font-size: 20px; margin-top: 20px;"><strong>Engagement Celebration</strong></p>
-      <p style="font-size: 18px;">Today, April 20, 2025</p>
+      <p style="font-size: 18px;">Today, April 20, 2025 at 12:00 PM</p>
       <div class="divider">💍✨💌✨💍</div>
     </div>
   </div>
@@ -126,28 +126,16 @@
   <div class="slide" id="slide1">
     <div class="container">
       <div class="arabic">السَّلَامُ عَلَيكُم وَرَحمَةُ اللهِ وَبَرَكَاتُهُ</div>
-      <h1>Engagement Announcement</h1>
+      <h1>Engagement Info</h1>
       <p>With the blessings of Allah ﷻ</p>
-      <p>We are delighted to share the joyous occasion of the engagement of Naeem & Saniya.</p>
+      <p>We’re happy to share the engagement of Naeem & Saniya</p>
+      <p>The Mansuri Family shares this joyous moment with you</p>
       <div class="divider">💫💖💫</div>
     </div>
   </div>
 
-  <!-- Slide 2: Details -->
+  <!-- Slide 2: Countdown -->
   <div class="slide" id="slide2">
-    <div class="container">
-      <h2>We are pleased to announce</h2>
-      <h1>Naeem <br /> & <br /> Saniya</h1>
-      <h3>📅 Engagement Day</h3>
-      <p><strong>Sunday, April 20, 2025</strong></p>
-      <h3>📍 Location</h3>
-      <p><strong>Ankleshwar</strong></p>
-      <div class="divider">💐💫🌹💫💐</div>
-    </div>
-  </div>
-
-  <!-- Slide 3: Countdown -->
-  <div class="slide" id="slide3">
     <div class="container">
       <h1>Countdown to Celebration 🎉</h1>
       <p>Mark this beautiful day!</p>
@@ -155,15 +143,15 @@
     </div>
   </div>
 
-  <!-- Slide 4: Thank You + Confetti -->
-  <div class="slide" id="slide4">
+  <!-- Slide 3: Thank You -->
+  <div class="slide" id="slide3">
     <div class="container">
       <h1>Thank You!</h1>
-      <p>We are overjoyed to share this special news with you.</p>
-      <p>Warm Wishes,</p>
-      <strong>Mansuri Family</strong>
+      <p>We’re grateful to share this special occasion.</p>
+      <p>Warm wishes from,</p>
+      <strong>The Mansuri Family</strong>
       <br/><br/>
-      <button onclick="exitPage()" style="margin-top: 20px; background: crimson; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">End</button>
+      <button onclick="exitPage()" style="margin-top: 20px; background: crimson; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">Close</button>
     </div>
   </div>
 
@@ -174,7 +162,7 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <script>
     let current = 0;
-    const totalSlides = 5;
+    const totalSlides = 4;
 
     function nextSlide() {
       const currentSlide = document.getElementById(`slide${current}`);
@@ -189,12 +177,12 @@
     }
 
     function exitPage() {
-      alert("Thank you for viewing! May this engagement bring blessings and happiness. 💖");
-      window.close(); // Might be blocked by some browsers
+      alert("Thank you for viewing! Wishing Naeem & Saniya a blessed future! 🎊");
+      window.close(); // May not work on all browsers
     }
 
     // Countdown setup
-    const countDownDate = new Date("April 20, 2025 00:00:00").getTime();
+    const countDownDate = new Date("April 20, 2025 12:00:00").getTime();
     const countdownElement = document.getElementById("countdown");
     const interval = setInterval(function () {
       const now = new Date().getTime();
@@ -231,4 +219,3 @@
   </script>
 </body>
 </html>
-
