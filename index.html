@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Engagement Announcement - Mansuri Family</title>
+  <title>Wedding Invitation - Khan Family</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
@@ -11,8 +11,8 @@
     body {
       margin: 0;
       font-family: 'Georgia', serif;
-      background: linear-gradient(to bottom, #e3e3f5, #b1b1d9);
-      color: #3c3c77;
+      background: linear-gradient(to bottom, #fff0f5, #fdeff9);
+      color: #5e1a3c;
       text-align: center;
       overflow-x: hidden;
     }
@@ -37,18 +37,18 @@
       border: 15px double transparent;
       border-radius: 30px;
       padding: 40px 30px;
-      background: #f4f6fc;
+      background: #fff8fc;
       box-shadow:
-        0 0 10px #b0b0e6,
-        0 0 30px #b0b0e6,
-        inset 0 0 10px #b0b0e6;
+        0 0 10px #ffd700,
+        0 0 30px #ffd700,
+        inset 0 0 10px #ffd700;
       background-clip: padding-box;
     }
 
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 50px;
-      color: #1e1e64;
+      font-size: 45px;
+      color: #b8860b;
       margin-bottom: 20px;
     }
 
@@ -63,7 +63,7 @@
     }
 
     .divider {
-      font-size: 30px;
+      font-size: 28px;
       margin: 20px 0;
       animation: float 4s ease-in-out infinite;
     }
@@ -85,7 +85,7 @@
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      background: #1e1e64;
+      background: #b8860b;
       color: white;
       padding: 12px 24px;
       border: none;
@@ -97,7 +97,7 @@
     }
 
     .button-fixed:hover {
-      background: #1a1a59;
+      background: #a87400;
     }
 
     #countdown {
@@ -105,20 +105,62 @@
       margin-top: 20px;
       font-weight: bold;
     }
+
+    /* RSVP Form Styles */
+    #rsvpForm {
+      text-align: left;
+      max-width: 500px;
+      margin: 20px auto;
+    }
+    #rsvpForm label {
+      font-size: 18px;
+      margin-bottom: 5px;
+      display: block;
+    }
+    #rsvpForm input[type="text"],
+    #rsvpForm input[type="number"],
+    #rsvpForm select,
+    #rsvpForm textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #b8860b;
+      border-radius: 5px;
+      font-family: 'Georgia', serif;
+    }
+    #rsvpForm input[type="radio"] {
+      margin: 10px 5px;
+    }
+    #rsvpForm button {
+      background: #b8860b;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #rsvpForm button:hover {
+      background: #a87400;
+    }
+    #formMessage {
+      margin-top: 20px;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Slide 0: Cover -->
+  <!-- Slide 0: Guest Name + Cover -->
   <div class="slide active" id="slide0">
     <div class="container">
-      <h2 style="font-family: 'Great Vibes', cursive; font-size: 38px;">You Are Informed With Joy</h2>
-      <h1 style="font-size: 50px; color: #003366; margin-top: 20px;">Naeem Mansuri</h1>
-      <h1 style="font-size: 50px; color: #003366;">&</h1>
-      <h1 style="font-size: 50px; color: #003366;">Saniya Mansur</h1>
-      <p style="font-size: 20px; margin-top: 20px;"><strong>Engagement Celebration</strong></p>
-      <p style="font-size: 18px;">Today, April 20, 2025 at 12:00 PM</p>
-      <div class="divider">💍✨🎉✨💍</div>
+      <p style="font-size: 22px;" id="guestNameLine">Dear Guest,</p>
+      <h2 style="font-family: 'Great Vibes', cursive; font-size: 38px;">You Are Cordially Invited</h2>
+      <h1 style="font-size: 42px; color: #a0522d; margin-top: 20px;">Sayema weds Imran<br /> & <br /></h1>
+      <h1 style="font-size: 42px; color: #a0522d;">Sayeed weds Momina</h1>
+      <p style="font-size: 20px; margin-top: 20px;"><strong>Wedding Celebration</strong></p>
+      <p style="font-size: 18px;">On May 9 & 10, 2025</p>
+      <div class="divider">💍✨💌✨💍</div>
     </div>
   </div>
 
@@ -126,33 +168,42 @@
   <div class="slide" id="slide1">
     <div class="container">
       <div class="arabic">السَّلَامُ عَلَيكُم وَرَحمَةُ اللهِ وَبَرَكَاتُهُ</div>
-      <h1>Engagement Announcement</h1>
+      <h1>Wedding Invitation</h1>
       <p>With the blessings of Allah ﷻ</p>
-      <p>The Mansuri Family is pleased to share this special occasion</p>
-      <div class="divider">✨💖✨</div>
+      <p>The Khan Family cordially invites you to join in the joyous celebration</p>
+      <div class="divider">💫💖💫</div>
     </div>
   </div>
 
   <!-- Slide 2: Details -->
   <div class="slide" id="slide2">
     <div class="container">
-      <h2>We are happy to inform you of the engagement of</h2>
-      <h1>Naeem & Saniya</h1>
-      <h3>📅 Date</h3>
-      <p><strong>Today - April 20, 2025</strong></p>
-      <h3>🕛 Time</h3>
-      <p><strong>12:00 PM</strong></p>
-      <h3>📍 Venue</h3>
-      <p><strong>Mansuri Residence</strong><br />Kim</p>
-      <div class="divider">🎉💐🌸💐🎉</div>
+      <h2>We feel immensely blessed to invite you to the weddings of</h2>
+      <div class="section">
+        <h1>Sayema Khan <br /> & <br /> Mo. Imran Khan</h1>
+        <h3>📅 Nikah </h3>
+        <p><strong>Saturday, May 10, 2025</strong><br />7:30 PM onwards</p>
+        <h3>📍 Venue</h3>
+        <p><strong>Sethna Banquet Hall</strong><br />Near GEB Office, Ankleshwar</p>
+      </div>
+      <div class="divider">💐💫🌹💫💐</div>
+      <div class="section">
+        <h1>Er. Sayeed Khan <br /> & <br /> Momina Khan</h1>
+        <h3>📅 Nikah</h3>
+        <p><strong>Friday, May 9, 2025</strong><br />After Jumma Namaz</p>
+        <h3>📅 Walima</h3>
+        <p><strong>Saturday, May 10, 2025</strong><br />7:30 PM onwards</p>
+        <h3>📍 Venue</h3>
+        <p><strong>Sethna Banquet Hall</strong><br />Near GEB Office, Ankleshwar</p>
+      </div>
     </div>
   </div>
 
   <!-- Slide 3: Countdown -->
   <div class="slide" id="slide3">
     <div class="container">
-      <h1>Countdown to Engagement 🎉</h1>
-      <p>It’s almost time!</p>
+      <h1>Countdown to Celebration 🎉</h1>
+      <p>Get ready for the big day!</p>
       <div id="countdown"></div>
     </div>
   </div>
@@ -161,11 +212,49 @@
   <div class="slide" id="slide4">
     <div class="container">
       <h1>Thank You!</h1>
-      <p>We’re happy to share this moment with you.</p>
+      <p>We look forward to celebrating this special occasion with you.</p>
       <p>Warm Regards,</p>
-      <strong>Mansuri Family</strong>
+      <strong>Khan Family</strong>
       <br/><br/>
-      <button onclick="closePage()" style="margin-top: 20px; background: #003366; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">End</button>
+      <button onclick="exitPage()" style="margin-top: 20px; background: crimson; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">End</button>
+    </div>
+  </div>
+
+  <!-- Slide 5: RSVP Form -->
+  <div class="slide" id="slide5">
+    <div class="container">
+      <h1>RSVP to Our Celebration</h1>
+      <p>Please let us know if you can join us by April 10, 2025!</p>
+      <form id="rsvpForm">
+        <label for="name">Name(s):</label>
+        <input type="text" id="name" name="name" required />
+
+        <label>Will you attend?</label>
+        <input type="radio" id="attendYes" name="attend" value="yes" required />
+        <label for="attendYes">Yes, I/we will be there!</label><br />
+        <input type="radio" id="attendNo" name="attend" value="no" />
+        <label for="attendNo">Sorry, I/we can't make it.</label><br />
+
+        <label for="guests">Number of Guests (including yourself):</label>
+        <input type="number" id="guests" name="guests" min="0" max="10" value="1" />
+
+        <label for="meal">Meal Preference:</label>
+        <select id="meal" name="meal">
+          <option value="chicken">Chicken</option>
+          <option value="beef">Beef</option>
+          <option value="vegetarian">Vegetarian</option>
+          <option value="kids">Kids' Meal</option>
+        </select>
+
+        <label for="dietary">Dietary Restrictions or Allergies:</label>
+        <textarea id="dietary" name="dietary" rows="4"></textarea>
+
+        <label for="song">Song Request (Optional):</label>
+        <input type="text" id="song" name="song" />
+
+        <button type="submit">Submit RSVP</button>
+      </form>
+      <p id="formMessage"></p>
     </div>
   </div>
 
@@ -176,7 +265,7 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <script>
     let current = 0;
-    const totalSlides = 5;
+    const totalSlides = 6; // Updated for RSVP slide
 
     function nextSlide() {
       const currentSlide = document.getElementById(`slide${current}`);
@@ -186,32 +275,69 @@
       if (nextSlide) nextSlide.classList.add("active");
       if (current === totalSlides - 1) {
         document.getElementById("nextButton").style.display = "none";
-        triggerConfetti();
       }
     }
 
-    function closePage() {
+    function exitPage() {
+      alert("Thank you for visiting! Hope to see you at the wedding! 🎊");
       window.close();
     }
 
-    // Countdown
+    // Guest name prompt
     window.onload = function () {
-      const countDownDate = new Date("Apr 20, 2025 12:00:00").getTime();
+      const name = prompt("Please enter your name:");
+      const guestLine = document.getElementById("guestNameLine");
+      if (name && name.trim() !== "") {
+        guestLine.textContent = `Dear ${name.trim()},`;
+      }
+
+      // Countdown setup
+      const countDownDate = new Date("May 10, 2025 19:30:00").getTime();
       const countdownElement = document.getElementById("countdown");
       const interval = setInterval(function () {
         const now = new Date().getTime();
         const distance = countDownDate - now;
         if (distance < 0) {
           clearInterval(interval);
-          countdownElement.innerHTML = "🎉 It's time!";
+          countdownElement.innerHTML = "🎊 It's time to celebrate!";
           return;
         }
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s remaining`;
       }, 1000);
+
+      // RSVP Form Submission
+      document.getElementById("rsvpForm")?.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const formData = {
+          name: document.getElementById("name").value,
+          attend: document.querySelector('input[name="attend"]:checked').value,
+          guests: document.getElementById("guests").value,
+          meal: document.getElementById("meal").value,
+          dietary: document.getElementById("dietary").value,
+          song: document.getElementById("song").value,
+          timestamp: new Date().toISOString(),
+        };
+
+        // Store in localStorage
+        const responses = JSON.parse(localStorage.getItem("rsvpResponses") || "[]");
+        responses.push(formData);
+        localStorage.setItem("rsvpResponses", JSON.stringify(responses));
+
+        // Show confirmation
+        const message = document.getElementById("formMessage");
+        message.textContent = "Thank you for your RSVP!";
+        message.style.color = "#b8860b";
+
+        // Trigger confetti
+        triggerConfetti();
+
+        // Reset form
+        document.getElementById("rsvpForm").reset();
+      });
     };
 
     // Confetti animation
