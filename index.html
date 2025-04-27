@@ -130,7 +130,7 @@
       <p style="font-size: 22px;" id="guestNameLine">Dear Guest,</p>
       <h2 style="font-family: 'Great Vibes', cursive; font-size: 38px;">You Are Cordially Invited</h2>
       <h1 style="font-size: 42px; color: #a0522d; margin-top: 20px;">Sayeed weds Momina</h1>
-      <p style="font-size: 20px; margin-top: 20px;"><strong>Wedding Celebration</strong></p>
+      <p style="font-size: 20px; margin-top: 20px;"><strong>Walima & Reception</strong></p>
       <p style="font-size: 18px;">On May 9 & 10, 2025</p>
       <div class="divider">💍✨💌✨💍</div>
     </div>
@@ -190,8 +190,8 @@
     <a href="https://api.whatsapp.com/send?text=Join%20us%20for%20the%20wedding%20celebration!%20https://yourwebsite.com" target="_blank">Share on WhatsApp</a>
   </div>
 
-  <!-- Next Button -->
-  <button class="button-fixed" id="nextButton" onclick="nextSlide()">Next</button>
+  <!-- Print-to-PDF -->
+  <button class="button-fixed" id="printButton" onclick="printPage()">Print Invitation</button>
 
   <!-- Audio Player -->
   <div class="audio-player">
@@ -273,6 +273,11 @@
           origin: { x: Math.random(), y: Math.random() - 0.2 }
         }));
       }, 250);
+    }
+
+    // Print page
+    function printPage() {
+      window.print();
     }
   </script>
 </body>
