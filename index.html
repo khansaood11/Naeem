@@ -160,7 +160,7 @@
     <h1>Thank You!</h1>
     <p>Looking forward to your presence.</p>
     <p>Warm regards, <br><strong>Khan Family</strong></p>
-    <button onclick="window.print()" style="margin-top:20px; padding:10px 20px;">🖨️ Print / Save Invitation</button>
+    <button id="printBtn" style="margin-top:20px; padding:10px 20px;">🖨️ Print / Save Invitation</button>
   </div>
 </div>
 
@@ -231,11 +231,12 @@ function toggleAudio() {
 
 function generateFlowers() {
   const container = document.getElementById('flowerContainer');
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 30; i++) {
     const flower = document.createElement('div');
     flower.className = 'flower';
     flower.style.left = Math.random() * 100 + 'vw';
     flower.style.animationDuration = (5 + Math.random() * 5) + 's';
+    flower.style.animationDelay = Math.random() * 5 + 's';
     container.appendChild(flower);
   }
 }
@@ -244,6 +245,10 @@ function generateFlowers() {
 function toggleLanguage() {
   alert("Language toggle feature under construction!");
 }
+
+document.getElementById("printBtn").addEventListener("click", function() {
+  window.print();
+});
 </script>
 
 </body>
