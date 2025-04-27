@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Wedding Invitation - Khan Family</title>
+  <title>Wedding Invitation</title>
   <style>
-    /* Existing styles + new additions for animations and print-friendly */
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
     * { box-sizing: border-box; }
@@ -75,12 +74,6 @@
       font-size: 18px;
     }
 
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-      100% { transform: translateY(0); }
-    }
-
     .button-fixed {
       position: fixed;
       bottom: 20px;
@@ -107,13 +100,35 @@
       font-weight: bold;
     }
 
+    .action-buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .action-buttons button {
+      background-color: #b8860b;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    .action-buttons button:hover {
+      background-color: #a87400;
+    }
+
     /* Print-friendly version */
     @media print {
       body {
         background: white;
         color: black;
       }
-      .button-fixed, #nextButton {
+      .button-fixed, .action-buttons {
         display: none;
       }
       .slide {
@@ -130,17 +145,19 @@
     <source src="Shukran Allah Full Video - KurbaanKareena Kapoor,Saif Ali KhanSonu Nigam,Shreya Ghoshal.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
-  <button onclick="toggleAudio()" id="audioButton">Mute</button>
+  
+  <div class="action-buttons">
+    <button onclick="toggleAudio()">Mute/Unmute Music</button>
+  </div>
 
   <!-- Slides -->
   <div class="slide active" id="slide0">
     <div class="container">
       <p style="font-size: 22px;" id="guestNameLine">Dear Guest,</p>
       <h2 style="font-family: 'Great Vibes', cursive; font-size: 38px;">You Are Cordially Invited</h2>
-      <h1 style="font-size: 42px; color: #a0522d; margin-top: 20px;">Sayema weds Imran<br /> & <br /></h1>
-      <h1 style="font-size: 42px; color: #a0522d;">Sayeed weds Momina</h1>
+      <h1 style="font-size: 42px; color: #a0522d; margin-top: 20px;">Walim & Reception</h1>
       <p style="font-size: 20px; margin-top: 20px;"><strong>Wedding Celebration</strong></p>
-      <p style="font-size: 18px;">On May 9 & 10, 2025</p>
+      <p style="font-size: 18px;">On May 10, 2025</p>
       <div class="divider">💍✨💌✨💍</div>
     </div>
   </div>
@@ -149,43 +166,56 @@
   <div class="slide" id="slideMap">
     <div class="container">
       <h2>Venue Location</h2>
-      <div id="map"></div>
+      <div id="map" style="height: 300px; width: 100%;"></div>
     </div>
   </div>
 
   <!-- Language Toggle -->
-  <button onclick="toggleLanguage()">Toggle Language</button>
+  <div class="action-buttons">
+    <button onclick="toggleLanguage()">Toggle Language (English/Arabic)</button>
+  </div>
 
   <!-- Social Share Buttons -->
-  <div>
-    <a href="https://wa.me/?text=Wedding%20Invite%20Link%20Here" target="_blank">Share on WhatsApp</a>
-    <a href="https://t.me/share/url?url=Wedding%20Invite%20Link%20Here" target="_blank">Share on Telegram</a>
-    <a href="mailto:?subject=Wedding%20Invitation&body=Wedding%20Invite%20Link%20Here" target="_blank">Share via Email</a>
+  <div class="action-buttons">
+    <a href="https://wa.me/?text=Wedding%20Invite%20Link%20Here" target="_blank">
+      <button>Share on WhatsApp</button>
+    </a>
+    <a href="https://t.me/share/url?url=Wedding%20Invite%20Link%20Here" target="_blank">
+      <button>Share on Telegram</button>
+    </a>
+    <a href="mailto:?subject=Wedding%20Invitation&body=Wedding%20Invite%20Link%20Here" target="_blank">
+      <button>Share via Email</button>
+    </a>
   </div>
 
   <!-- Print Invitation Button -->
-  <button class="button-fixed" onclick="printInvite()">Print Invitation</button>
+  <div class="action-buttons">
+    <button onclick="printInvite()">Print Invitation</button>
+  </div>
 
   <!-- JS Script -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script>
-    let current = 0;
-    const totalSlides = 5;
-    
-    function nextSlide() {
-      const currentSlide = document.getElementById(`slide${current}`);
-      if (currentSlide) currentSlide.classList.remove("active");
-      current++;
-      const nextSlide = document.getElementById(`slide${current}`);
-      if (nextSlide) nextSlide.classList.add("active");
-      if (current === totalSlides - 1) {
-        document.getElementById("nextButton").style.display = "none";
-        triggerConfetti();
+    // Background Audio Control
+    function toggleAudio() {
+      const audio = document.getElementById("background-audio");
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
       }
     }
 
+    // Toggle Language (English ↔ Arabic)
+    function toggleLanguage() {
+      const isEnglish = document.body.classList.toggle("english");
+      document.getElementById("guestNameLine").innerText = isEnglish ? "Dear Guest" : "عزيزي الضيف";
+      document.querySelector("h2").innerText = isEnglish ? "You Are Cordially Invited" : "أنت مدعو بحرارة";
+    }
+
+    // Print Invitation
     function printInvite() {
       const doc = new jsPDF();
       doc.html(document.body, {
@@ -195,24 +225,7 @@
       });
     }
 
-    function toggleAudio() {
-      const audio = document.getElementById("background-audio");
-      const button = document.getElementById("audioButton");
-      if (audio.paused) {
-        audio.play();
-        button.innerText = "Mute";
-      } else {
-        audio.pause();
-        button.innerText = "Unmute";
-      }
-    }
-
-    function toggleLanguage() {
-      const isEnglish = document.body.classList.toggle("english");
-      document.getElementById("guestNameLine").innerText = isEnglish ? "Dear Guest" : "عزيزي الضيف";
-      document.querySelector("h2").innerText = isEnglish ? "You Are Cordially Invited" : "أنت مدعو بحرارة";
-    }
-
+    // Initialize Google Map
     function initMap() {
       const venue = { lat: 21.6115, lng: 73.0206 }; // Example coordinates for venue
       const map = new google.maps.Map(document.getElementById("map"), {
