@@ -105,6 +105,21 @@
       margin-top: 20px;
       font-weight: bold;
     }
+
+    .share-buttons {
+      margin: 20px 0;
+    }
+
+    .share-buttons a {
+      margin: 0 10px;
+      font-size: 24px;
+      color: #5e1a3c;
+      text-decoration: none;
+    }
+
+    .audio-player {
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
@@ -114,8 +129,7 @@
     <div class="container">
       <p style="font-size: 22px;" id="guestNameLine">Dear Guest,</p>
       <h2 style="font-family: 'Great Vibes', cursive; font-size: 38px;">You Are Cordially Invited</h2>
-      <h1 style="font-size: 42px; color: #a0522d; margin-top: 20px;">Sayema weds Imran<br /> & <br /></h1>
-      <h1 style="font-size: 42px; color: #a0522d;">Sayeed weds Momina</h1>
+      <h1 style="font-size: 42px; color: #a0522d; margin-top: 20px;">Sayeed weds Momina</h1>
       <p style="font-size: 20px; margin-top: 20px;"><strong>Wedding Celebration</strong></p>
       <p style="font-size: 18px;">On May 9 & 10, 2025</p>
       <div class="divider">💍✨💌✨💍</div>
@@ -138,22 +152,13 @@
     <div class="container">
       <h2>We feel immensely blessed to invite you to the weddings of</h2>
       <div class="section">
-        <h1>Sayema Khan <br /> & <br /> Mo. Imran Khan</h1>
+        <h1>Er. Sayeed Khan <br /> & <br /> Momina Khan</h1>
         <h3>📅 Wedding Day</h3>
         <p><strong>Saturday, May 10, 2025</strong><br />7:30 PM onwards</p>
         <h3>📍 Venue</h3>
         <p><strong>Sethna Banquet Hall</strong><br />Near GEB Office, Ankleshwar</p>
       </div>
       <div class="divider">💐💫🌹💫💐</div>
-      <div class="section">
-        <h1>Er. Sayeed Khan <br /> & <br /> Momina Khan</h1>
-        <h3>📅 Wedding Day</h3>
-        <p><strong>Friday, May 9, 2025</strong><br />After Jumma Namaz</p>
-        <h3>📅 Walim & Reception</h3>
-        <p><strong>Saturday, May 10, 2025</strong><br />7:30 PM onwards</p>
-        <h3>📍 Venue</h3>
-        <p><strong>Sethna Banquet Hall</strong><br />Near GEB Office, Ankleshwar</p>
-      </div>
     </div>
   </div>
 
@@ -178,8 +183,29 @@
     </div>
   </div>
 
+  <!-- Share Buttons -->
+  <div class="share-buttons">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" target="_blank">Share on Facebook</a>
+    <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com&text=Join%20us%20for%20the%20wedding%20celebration!" target="_blank">Share on Twitter</a>
+    <a href="https://api.whatsapp.com/send?text=Join%20us%20for%20the%20wedding%20celebration!%20https://yourwebsite.com" target="_blank">Share on WhatsApp</a>
+  </div>
+
   <!-- Next Button -->
   <button class="button-fixed" id="nextButton" onclick="nextSlide()">Next</button>
+
+  <!-- Audio Player -->
+  <div class="audio-player">
+    <audio controls autoplay loop>
+      <source src="your-audio-file.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <!-- Google Map Embed -->
+  <div class="container">
+    <h3>Location</h3>
+    <iframe src="https://www.google.com/maps/embed?pb=YOUR_GOOGLE_MAP_EMBED_URL" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
 
   <!-- JS Script -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
