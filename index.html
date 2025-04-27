@@ -2,84 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Wedding Invitation - Khan Family</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khan Family Wedding Invitation</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
-    * { box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      margin: 0;
       font-family: 'Georgia', serif;
       background: linear-gradient(to bottom, #fff0f5, #fdeff9);
       color: #5e1a3c;
-      text-align: center;
       overflow-x: hidden;
+      position: relative;
     }
 
     .slide {
       display: none;
-      padding: 30px 20px 80px;
       min-height: 100vh;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      transition: all 0.8s ease-in-out;
+      padding: 40px 20px;
+      transition: all 0.8s;
     }
-
-    .active {
+    .slide.active {
       display: flex;
     }
-
     .container {
-      max-width: 650px;
+      max-width: 700px;
       margin: auto;
-      border: 15px double transparent;
-      border-radius: 30px;
-      padding: 40px 30px;
-      background: #fff8fc;
-      box-shadow:
-        0 0 10px #ffd700,
-        0 0 30px #ffd700,
-        inset 0 0 10px #ffd700;
-      background-clip: padding-box;
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px #ffd700;
     }
-
-    h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 45px;
-      color: #b8860b;
-      margin-bottom: 20px;
-    }
-
-    h2, h3, p {
-      margin: 10px 0;
-    }
-
-    .arabic {
-      font-size: 24px;
-      font-weight: bold;
+    h1, h2, p {
       margin-bottom: 15px;
     }
-
     .divider {
-      font-size: 28px;
+      font-size: 30px;
       margin: 20px 0;
       animation: float 4s ease-in-out infinite;
     }
-
-    .footer {
-      margin-top: 30px;
-      font-style: italic;
-      font-size: 18px;
-    }
-
     @keyframes float {
       0% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+      50% { transform: translateY(-10px); }
       100% { transform: translateY(0); }
     }
-
     .button-fixed {
       position: fixed;
       bottom: 20px;
@@ -95,190 +64,187 @@
       z-index: 1000;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
-
     .button-fixed:hover {
       background: #a87400;
     }
-
     #countdown {
       font-size: 24px;
-      margin-top: 20px;
       font-weight: bold;
+      margin-top: 20px;
     }
-
-    .share-buttons {
-      margin: 20px 0;
+    .floating-flowers {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      top: 0;
+      pointer-events: none;
     }
-
-    .share-buttons a {
-      margin: 0 10px;
-      font-size: 24px;
-      color: #5e1a3c;
-      text-decoration: none;
+    .flower {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: url('https://i.postimg.cc/mrNpPrp1/flower.png') no-repeat center/contain;
+      animation: fall linear infinite;
     }
-
-    .audio-player {
-      margin-top: 30px;
+    @keyframes fall {
+      0% { transform: translateY(-10%) rotate(0deg); }
+      100% { transform: translateY(110vh) rotate(360deg); }
+    }
+    .audio-control {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #ffd700;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
     }
   </style>
 </head>
 <body>
 
-  <!-- Slide 0: Guest Name + Cover -->
-  <div class="slide active" id="slide0">
-    <div class="container">
-      <p style="font-size: 22px;" id="guestNameLine">Dear Guest,</p>
-      <h2 style="font-family: 'Great Vibes', cursive; font-size: 38px;">You Are Cordially Invited</h2>
-      <h1 style="font-size: 42px; color: #a0522d; margin-top: 20px;">Sayeed weds Momina</h1>
-      <p style="font-size: 20px; margin-top: 20px;"><strong>Walima & Reception</strong></p>
-      <p style="font-size: 18px;">On May 9 & 10, 2025</p>
-      <div class="divider">💍✨💌✨💍</div>
-    </div>
-  </div>
+<div class="floating-flowers" id="flowerContainer"></div>
 
-  <!-- Slide 1: Welcome -->
-  <div class="slide" id="slide1">
-    <div class="container">
-      <div class="arabic">السَّلَامُ عَلَيكُم وَرَحمَةُ اللهِ وَبَرَكَاتُهُ</div>
-      <h1>Wedding Invitation</h1>
-      <p>With the blessings of Allah ﷻ</p>
-      <p>The Khan Family cordially invites you to join in the joyous celebration</p>
-      <div class="divider">💫💖💫</div>
-    </div>
-  </div>
+<audio id="bgMusic" autoplay loop>
+  <source src="Shukran Allah Full Video - KurbaanKareena Kapoor,Saif Ali KhanSonu Nigam,Shreya Ghoshal.mp3" type="audio/mpeg">
+</audio>
 
-  <!-- Slide 2: Details -->
-  <div class="slide" id="slide2">
-    <div class="container">
-      <h2>We feel immensely blessed to invite you to the weddings of</h2>
-      <div class="section">
-        <h1>Er. Sayeed Khan <br /> & <br /> Momina Khan</h1>
-        <h3>📅 Wedding Day</h3>
-        <p><strong>Saturday, May 10, 2025</strong><br />7:30 PM onwards</p>
-        <h3>📍 Venue</h3>
-        <p><strong>Sethna Banquet Hall</strong><br />Near GEB Office, Ankleshwar</p>
-      </div>
-      <div class="divider">💐💫🌹💫💐</div>
-    </div>
-  </div>
+<div class="audio-control" onclick="toggleAudio()">🔊</div>
 
-  <!-- Slide 3: Countdown -->
-  <div class="slide" id="slide3">
-    <div class="container">
-      <h1>Countdown to Celebration 🎉</h1>
-      <p>Get ready for the big day!</p>
-      <div id="countdown"></div>
-    </div>
-  </div>
-
-  <!-- Slide 4: Thank You + Confetti -->
-  <div class="slide" id="slide4">
-    <div class="container">
-      <h1>Thank You!</h1>
-      <p>We look forward to celebrating this special occasion with you.</p>
-      <p>Warm Regards,</p>
-      <strong>Khan Family</strong>
-      <br/><br/>
-      <button onclick="exitPage()" style="margin-top: 20px; background: crimson; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">End</button>
-    </div>
-  </div>
-
-  <!-- Share Buttons -->
-  <div class="share-buttons">
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" target="_blank">Share on Facebook</a>
-    <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com&text=Join%20us%20for%20the%20wedding%20celebration!" target="_blank">Share on Twitter</a>
-    <a href="https://api.whatsapp.com/send?text=Join%20us%20for%20the%20wedding%20celebration!%20https://yourwebsite.com" target="_blank">Share on WhatsApp</a>
-  </div>
-
-  <!-- Print-to-PDF -->
-  <button class="button-fixed" id="printButton" onclick="printPage()">Print Invitation</button>
-
-  <!-- Audio Player -->
-  <div class="audio-player">
-    <audio controls autoplay loop>
-      <source src="your-audio-file.mp3" type="audio/mp3">
-      Your browser does not support the audio element.
-    </audio>
-  </div>
-
-  <!-- Google Map Embed -->
+<!-- Slide 0 -->
+<div class="slide active" id="slide0">
   <div class="container">
-    <h3>Location</h3>
-    <iframe src="https://www.google.com/maps/embed?pb=YOUR_GOOGLE_MAP_EMBED_URL" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <h2 id="guestName">Dear Guest,</h2>
+    <h1 style="font-family:'Great Vibes', cursive;">You are Invited!</h1>
+    <h2>Wedding Celebration</h2>
+    <p><strong>Er. Sayeed Khan & Momina Khan</strong></p>
+    <p>9th and 10th May, 2025</p>
+    <div class="divider">💍✨💌✨💍</div>
   </div>
+</div>
 
-  <!-- JS Script -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <script>
-    let current = 0;
-    const totalSlides = 5;
+<!-- Slide 1 -->
+<div class="slide" id="slide1">
+  <div class="container">
+    <h1>Assalamu Alaikum Wa Rahmatullahi Wa Barakatuh</h1>
+    <p>The Khan Family warmly invites you to join the wedding celebrations.</p>
+    <div class="divider">🌸✨🌸</div>
+  </div>
+</div>
 
-    function nextSlide() {
-      const currentSlide = document.getElementById(`slide${current}`);
-      if (currentSlide) currentSlide.classList.remove("active");
-      current++;
-      const nextSlide = document.getElementById(`slide${current}`);
-      if (nextSlide) nextSlide.classList.add("active");
-      if (current === totalSlides - 1) {
-        document.getElementById("nextButton").style.display = "none";
-        triggerConfetti();
-      }
+<!-- Slide 2 -->
+<div class="slide" id="slide2">
+  <div class="container">
+    <h2>Event Details</h2>
+    <p><strong>Nikah and Reception</strong><br>Friday 9th May, 2025 (After Jumma Prayer)</p>
+    <p><strong>Walima and Reception</strong><br>Saturday 10th May, 2025 at 7:30 PM onwards</p>
+    <p><strong>Venue:</strong><br><a href="https://maps.app.goo.gl/XKM4esRbRzD3xh777" target="_blank">Sethna Banquet Hall, Near GEB Office, Ankleshwar</a></p>
+    <div class="divider">🎉🎊🎉</div>
+  </div>
+</div>
+
+<!-- Slide 3 -->
+<div class="slide" id="slide3">
+  <div class="container">
+    <h2>Countdown to the Special Day</h2>
+    <div id="countdown"></div>
+  </div>
+</div>
+
+<!-- Slide 4 -->
+<div class="slide" id="slide4">
+  <div class="container">
+    <h1>Thank You!</h1>
+    <p>Looking forward to your presence.</p>
+    <p>Warm regards, <br><strong>Khan Family</strong></p>
+    <button onclick="window.print()" style="margin-top:20px; padding:10px 20px;">🖨️ Print / Save Invitation</button>
+  </div>
+</div>
+
+<!-- Next Button -->
+<button class="button-fixed" id="nextButton" onclick="nextSlide()">Next</button>
+
+<!-- Language Toggle Buttons -->
+<div style="position: fixed; top: 100px; left: 20px; background: #ffd700; padding: 10px; border-radius: 50%; cursor: pointer;">
+  <span onclick="toggleLanguage()">🌐</span>
+</div>
+
+<!-- Social Media Share Buttons -->
+<div style="position: fixed; bottom: 100px; right: 10px;">
+  <a href="https://facebook.com" target="_blank" style="text-decoration: none;">
+    <button style="padding: 10px; margin: 5px; background: #3b5998; color: white; border: none; border-radius: 5px;">Share on Facebook</button>
+  </a>
+  <a href="https://twitter.com" target="_blank" style="text-decoration: none;">
+    <button style="padding: 10px; margin: 5px; background: #00acee; color: white; border: none; border-radius: 5px;">Share on Twitter</button>
+  </a>
+  <a href="https://wa.me" target="_blank" style="text-decoration: none;">
+    <button style="padding: 10px; margin: 5px; background: #25d366; color: white; border: none; border-radius: 5px;">Share on WhatsApp</button>
+  </a>
+</div>
+
+<script>
+let current = 0;
+const totalSlides = 5;
+
+function nextSlide() {
+  document.getElementById(`slide${current}`).classList.remove("active");
+  current++;
+  if (current < totalSlides) {
+    document.getElementById(`slide${current}`).classList.add("active");
+    if (current === totalSlides - 1) {
+      document.getElementById("nextButton").style.display = "none";
     }
+  }
+}
 
-    function exitPage() {
-      alert("Thank you for visiting! Hope to see you at the wedding! 🎊");
-      window.close(); // Some browsers might block this
+window.onload = function() {
+  const name = prompt("Please enter your name:");
+  if (name) document.getElementById("guestName").textContent = `Dear ${name.trim()},`;
+
+  const countdownTarget = new Date("May 10, 2025 19:30:00").getTime();
+  const countdown = document.getElementById("countdown");
+
+  setInterval(() => {
+    const now = new Date().getTime();
+    const distance = countdownTarget - now;
+    if (distance < 0) {
+      countdown.innerHTML = "🎊 It's time to Celebrate!";
+      return;
     }
+    const days = Math.floor(distance / (1000*60*60*24));
+    const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+    const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+    const seconds = Math.floor((distance % (1000*60)) / 1000);
+    countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  }, 1000);
 
-    // Guest name prompt
-    window.onload = function () {
-      const name = prompt("Please enter your name:");
-      const guestLine = document.getElementById("guestNameLine");
-      if (name && name.trim() !== "") {
-        guestLine.textContent = `Dear ${name.trim()},`;
-      }
+  generateFlowers();
+};
 
-      // Countdown setup
-      const countDownDate = new Date("May 10, 2025 19:30:00").getTime();
-      const countdownElement = document.getElementById("countdown");
-      const interval = setInterval(function () {
-        const now = new Date().getTime();
-        const distance = countDownDate - now;
-        if (distance < 0) {
-          clearInterval(interval);
-          countdownElement.innerHTML = "🎊 It's time to celebrate!";
-          return;
-        }
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s remaining`;
-      }, 1000);
-    };
+function toggleAudio() {
+  const music = document.getElementById("bgMusic");
+  music.paused ? music.play() : music.pause();
+}
 
-    // Confetti animation
-    function triggerConfetti() {
-      const duration = 5 * 1000;
-      const animationEnd = Date.now() + duration;
-      const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
+function generateFlowers() {
+  const container = document.getElementById('flowerContainer');
+  for (let i = 0; i < 20; i++) {
+    const flower = document.createElement('div');
+    flower.className = 'flower';
+    flower.style.left = Math.random() * 100 + 'vw';
+    flower.style.animationDuration = (5 + Math.random() * 5) + 's';
+    container.appendChild(flower);
+  }
+}
 
-      const interval = setInterval(function () {
-        const timeLeft = animationEnd - Date.now();
-        if (timeLeft <= 0) return clearInterval(interval);
+// Language toggle function (This part is basic and can be improved for actual translation)
+function toggleLanguage() {
+  alert("Language toggle feature under construction!");
+}
+</script>
 
-        const particleCount = 50 * (timeLeft / duration);
-        confetti(Object.assign({}, defaults, {
-          particleCount,
-          origin: { x: Math.random(), y: Math.random() - 0.2 }
-        }));
-      }, 250);
-    }
-
-    // Print page
-    function printPage() {
-      window.print();
-    }
-  </script>
 </body>
 </html>
